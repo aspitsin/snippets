@@ -38,6 +38,73 @@ body
 b, strong
 	font-weight: bold
 
+// Таймлайн
+.timeline
+	padding: $gutter*2 0 //отступ контейнера сверху
+	+media-breakpoint-down(xs)
+	padding: $gutter*2 5%	//отступ контейнера сверху и пять процентов справа и слева	
 
+	&-item
+		padding: $gutter/2 0	//отсуп каждой карточки между друг другом сверху и снизу одинаково
+		position: relative //изучить!!
+
+		&::before
+			content: '●' //просто скопировали из списка ютф символов
+			position: absolute //изучить!!
+			width: 1px //ширина этого блока, создает иллюзию полоски	
+			height: 100% //на всю высоту блока
+			background-color: $black //закрашиваем блок, создает иллюзию полоски	
+			color: $accent 
+			font-size: 30px //размер шрифта для символа
+			line-height: 220% //отсуп сверху так как шрифт
+			text-indent: -8px //изучить!!
+
+		&:nth-child(odd) //четный
+			text-align: right 
+			padding-right: 90px+$gutter //изучить gutter
+			.timeline-item-img
+				right: $gutter	//изучить gutter
+			&::before
+				right: 0 //меняет положение направо
+			+media-breakpoint-down(xs)
+				text-align: left
+				padding-left: 90px+$gutter //изучить gutter
+				padding-right: 0 //
+				.timeline-item-img
+					left: $gutter //изучить gutter
+				&::before
+					left: 0 //меняет положение налево
+
+		&:nth-child(even)
+			+make-col-offset(6)
+			text-align: left
+			padding-left: 90px+$gutter //изучить gutter
+			.timeline-item-img
+				left: $gutter //изучить gutter
+			&::before
+				left: -1px //меняет положение 
+			+media-breakpoint-down(xs)
+				+make-col-offset(0)
+				&::before
+					left: 0
+
+		&-img 
+			width: 74px //w74+h74
+			height: 74px
+			overflow: hidden //картинка полностью залезает в блок
+			border-radius: 100% //brs
+			border: 3px solid $black //solid вид бордера
+			position: absolute //изучить
+			img 
+				width: 100%
+		p
+		 line-height: 1.4 //lh
+		 margin: 4px 0 0 0 //двигаем вниз
+		 span 
+			 display: block //изучить
+			 font-size: 12px 
+			 color: $accent
+			 font-weight: bold //полижирнй
+			 margin-top: 5px //двигаем вниз
 
 @import "media" // Always at the end
