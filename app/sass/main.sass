@@ -14,9 +14,12 @@ body
 	min-width: 320px
 	position: relative
 	line-height: 1.65
-	font-family: $default-font
+	//font-family: $default-font //по умолчанию
+	font-family: 'Open Sans', sans-serif
+
 	overflow-x: hidden
 	color: $text
+	background-color: #f7f7f7 //адд колор 
 	input, textarea
 		border: #666 1px solid
 		outline: none
@@ -37,6 +40,76 @@ body
 
 b, strong
 	font-weight: bold
+
+//Таблица премуществ
+.text-right
+	text-align: right 
+
+.text-left
+	text-align: left
+
+.text-center
+	text-align: center
+
+.advantage
+	padding: 80px 
+	h2 
+		text-align: center
+		text-transform: uppercase 
+		margin-bottom: 80px
+
+.items-left
+	.item-text,
+	.item-icon
+		display: table-cell
+		vertical-align: top //очень важно 
+
+.items-right
+	.item-text,
+	.item-icon
+		display: table-cell
+		vertical-align: top //очень важно
+	
+		
+
+.items-left
+	margin-top: 20px //весь ряд вниз
+	.advantage-item
+		
+		margin-bottom: 20px //расстояние между карточками
+	.item-text
+		padding-right: $gutter //расстояние между кругом и текстом
+	.icon-wrap
+		width: 70px 
+		height: 70px
+		line-height: 70px //расположим значок в центре по вертикали
+		text-align: center	//расположим значок в центре по горизонтали
+		background-color: $accent 
+		display: inline-block //очень важно, чтобы все стили выше применились
+		border-radius: 100%
+		
+		font-size: 20px
+		color: pink
+
+.items-right
+	margin-top: 20px
+	.advantage-item
+		
+		margin-bottom: 20px
+	.item-text
+		padding-left: $gutter
+	.icon-wrap
+		width: 70px
+		height: 70px
+		line-height: 70px
+		text-align: center
+		background-color: $accent
+		display: inline-block
+		border-radius: 100%
+		
+		font-size: 20px
+		color: pink
+
 
 // Таймлайн
 .timeline
